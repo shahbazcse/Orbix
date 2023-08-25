@@ -36,13 +36,12 @@ export default function DataGrid() {
 
   return (
     <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem]">
-      {openModal && <Modal setOpenModal={setOpenModal} />}
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-4">
         {dataGrid.slice(firstIndex, lastIndex).map((n) => (
           <div
             key={n}
             onClick={() => setOpenModal(true)}
-            className="bg-orange-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex justify-center items-center border border-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             {n}
           </div>
@@ -58,7 +57,9 @@ export default function DataGrid() {
         >
           <span className="sr-only">Previous</span>
           <svg
-            className="h-5 w-5"
+            className={`h-8 w-8 ${
+              currentPage !== 1 ? "text-black" : "text-gray-400"
+            }`}
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -77,7 +78,7 @@ export default function DataGrid() {
             aria-current="page"
             className={`relative z-10 inline-flex ring-1 ring-inset ring-gray-300 ${
               currentPage === p ? "bg-gray-400 " : "hover:bg-gray-100"
-            } items-center px-4 py-2 text-sm font-semibold focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black`}
+            } items-center px-4 py-2 text-md font-semibold focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black`}
           >
             {p}
           </a>
@@ -88,9 +89,11 @@ export default function DataGrid() {
         >
           <span className="sr-only">Next</span>
           <svg
-            className="h-5 w-5"
+            className={`h-8 w-8 ${
+              currentPage !== totalPages ? "text-black" : "text-gray-400"
+            }`}
             viewBox="0 0 20 20"
-            fillRule="currentColor"
+            fill="currentColor"
             aria-hidden="true"
           >
             <path
@@ -101,6 +104,7 @@ export default function DataGrid() {
           </svg>
         </a>
       </nav>
+      {openModal && <Modal setOpenModal={setOpenModal} />}
     </div>
   );
 }
