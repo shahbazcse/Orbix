@@ -1,6 +1,6 @@
 export default function Banner() {
   return (
-    <div className="flex border-b-[1px] font-sans border-[#EEF1F5] xl:px-[42vh] xl:gap-24 w-full">
+    <div className="flex border-b-[1px] font-sans border-[#EEF1F5] xl:px-[42vh] xl:gap-24">
       <div className="flex flex-col gap-6 my-24 ml-12 w-[50%]">
         <h1 className="font-bold text-4xl">
           Powerful Tagline For Your Product

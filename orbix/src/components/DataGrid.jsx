@@ -1,6 +1,6 @@
 export default function DataGrid() {
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className="flex flex-col justify-center items-center">
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-4">
         <div className="bg-orange-400 rounded-md h-52 w-52"></div>
         <div className="bg-orange-400 rounded-md h-52 w-52"></div>

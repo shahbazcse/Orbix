@@ -7,12 +7,14 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#ffffff] w-screen">
-      <NavBar />
-      <Banner />
-      <Form />
-      <DataGrid />
-      <Footer />
+    <div className="flex relative max-h-screen max-w-screen mx-auto">
+      <div className="flex-col w-screen min-h-screen">
+        <NavBar />
+        <Banner />
+        <Form />
+        <DataGrid />
+        <Footer />
+      </div>
     </div>
   );
 }
