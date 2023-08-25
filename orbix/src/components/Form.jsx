@@ -1,6 +1,6 @@
 export default function Form() {
   return (
-    <div className="flex flex-col gap-6 justify-center items-center p-4 my-4 text-lg">
+    <div className="bg-[#ffffff] flex flex-col gap-6 justify-center items-center p-4 py-8 text-lg">
       <div className="font-bold text-3xl">Search Rockets</div>
       <div className="flex gap-6 justify-center items-center">
         <div className="flex gap-6">

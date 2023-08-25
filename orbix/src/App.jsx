@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex relative max-h-screen max-w-screen mx-auto">
-      <div className="flex-col w-screen min-h-screen">
+    <div className="flex max-h-screen max-w-screen">
+      <div className="flex-col w-screen bg-">
         <NavBar />
         <Banner />
         <Form />
