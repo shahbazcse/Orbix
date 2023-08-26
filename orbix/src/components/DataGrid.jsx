@@ -35,7 +35,7 @@ export default function DataGrid() {
   };
 
   return (
-    <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem]">
+    <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl font-semibold">
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-4">
         {dataGrid.slice(firstIndex, lastIndex).map((n) => (
           <div

@@ -6,7 +6,7 @@ export default function Modal({ setOpenModal }) {
     <div
       id="blur-area"
       onClick={(e) => closeModal(e)}
-      className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center"
+      className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center font-barlow font-thin"
     >
       <div className="bg-white rounded-lg sm:mx-[16rem] lg:h-[24rem] lg:mx-[36rem]">
         <div className="flex justify-end cursor-pointer border-b border-gray-400 text-white text-right px-4 py-2 rounded-t-lg">

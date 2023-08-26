@@ -1,9 +1,9 @@
 export default function Form() {
   return (
     <div className="bg-[#ffffff] flex flex-col gap-6 justify-center items-center p-4 py-8 text-lg">
-      <div className="font-bold text-3xl">Search Rockets</div>
+      <div className="font-bold text-3xl font-mont">Search Rockets</div>
       <div className="flex gap-6 justify-center items-center">
-        <div className="flex gap-6">
+        <div className="flex gap-6 font-barlow text-2xl">
           <div className="flex gap-3">
             <span className="font-bold">Status: </span>
             <select className="bg-[#EDF0F4] px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300">
@@ -29,7 +29,7 @@ export default function Form() {
             </select>
           </div>
         </div>
-        <div className="bg-slate-800 hover:bg-black rounded-md text-white font-semibold px-4 py-1 cursor-pointer">
+        <div className="bg-slate-800 hover:bg-black rounded-md text-white px-4 py-1 cursor-pointer">
           Search
         </div>
       </div>
