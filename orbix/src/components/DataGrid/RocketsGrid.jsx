@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import img1 from "../../assets/rockets/01.jpg";
+import img2 from "../../assets/rockets/02.jpg";
+import img3 from "../../assets/rockets/03.jpg";
+import img4 from "../../assets/rockets/04.jpg";
 
 export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
-  const [gridPerPage, setGridPerPage] = useState(10);
+  const gridPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(rockets.length / gridPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
@@ -30,17 +34,20 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
     });
   };
 
+  const randomImg = [img1, img2, img3, img4];
+
   return (
     <>
       <div className="font-bold my-12 text-4xl text-left font-mont">
         Explore Rockets
       </div>
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-6">
-        {rockets.slice(firstIndex, lastIndex).map(({ rocket_id }) => (
+        {rockets.slice(firstIndex, lastIndex).map(({ rocket_id }, index) => (
           <div
             key={rocket_id}
             onClick={() => handleOpenModal(rocket_id)}
-            className="flex justify-center items-center shadow-md hover:shadow-xl hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            style={{ backgroundImage: `url('${randomImg[index]}')` }}
+            className="flex justify-center items-center bg-cover shadow-md hover:shadow-lg hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             {rocket_id}
           </div>
@@ -51,7 +58,7 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
           className="cursor-pointer isolate inline-flex -space-x-px rounded-md shadow-sm my-6 mb-12"
           aria-label="Pagination"
         >
-          <a
+          <div
             onClick={navigatePreviousPage}
             className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
@@ -70,9 +77,9 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </div>
           {pages.map((p) => (
-            <a
+            <div
               key={p}
               onClick={() => setCurrentPage(p)}
               aria-current="page"
@@ -81,9 +88,9 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
               } items-center px-4 py-2 text-md font-semibold focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black`}
             >
               {p}
-            </a>
+            </div>
           ))}
-          <a
+          <div
             onClick={navigateNextPage}
             className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
@@ -102,7 +109,7 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </div>
         </nav>
       ) : (
         <div className="mb-8"></div>

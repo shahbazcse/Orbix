@@ -1,4 +1,8 @@
 import React from "react";
+import img1 from "../../assets/rockets/01.jpg";
+import img2 from "../../assets/rockets/02.jpg";
+import img3 from "../../assets/rockets/03.jpg";
+import img4 from "../../assets/rockets/04.jpg";
 
 function RocketData({ data }) {
   const {
@@ -22,16 +26,17 @@ function RocketData({ data }) {
     payload_weights,
     wikipedia,
   } = data;
-  const placeholderImg =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlwQ_VIDlZJLxfbXdTwEpcgS3DJ9oKz1wYNG8gyz7Xt_axUaNGSB5tEnVhwcjXsVtr7YU&usqp=CAU";
+
+  const randomNumber = () => Math.floor(Math.random() * (3 - 0) + 0);
+  const randomImg = [img1, img2, img3, img4];
   return (
-    <div className="flex gap-8 justify-center m-8">
+    <div className="flex flex-col gap-8 justify-center m-8">
       <img
-        className="h-[24rem] w-[14rem] rounded-xl"
-        src={placeholderImg}
+        className="h-[22rem] w-[46rem] rounded-xl"
+        src={randomImg[randomNumber()]}
         alt=""
       />
-      <div className="flex flex-col gap-4 tracking-wide">
+      <div className="flex flex-col gap-4 mx-4 hover:shadow-gray-400 tracking-wide">
         <p>
           <span className="font-bold">Rocket Id: </span>
           {rocket_id}
@@ -131,9 +136,8 @@ function RocketData({ data }) {
           </div>
           <div className="flex flex-col gap-6">
             {flickr_images?.map((img, index) => (
-              <a href={img} target="_blank">
+              <a key={img} href={index} target="_blank">
                 <img
-                  key={index}
                   src={img}
                   alt="Sample"
                   className="flex flex-col h-40 w-[13rem] hover:shadow-xl hover:shadow-gray-400 border-white hover:shadow-full rounded-md text-[14px] hover:bg-gray-100 cursor-pointer"

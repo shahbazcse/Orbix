@@ -1,4 +1,5 @@
 import React from "react";
+import { capsulesImg } from "../../assets/capsules";
 
 function CapsuleData({ data }) {
   const {
@@ -12,16 +13,17 @@ function CapsuleData({ data }) {
     status,
     type,
   } = data;
-  const placeholderImg =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlwQ_VIDlZJLxfbXdTwEpcgS3DJ9oKz1wYNG8gyz7Xt_axUaNGSB5tEnVhwcjXsVtr7YU&usqp=CAU";
+  const randomNumber = () =>
+    Math.floor(Math.random() * (capsulesImg.length - 1 - 0) + 0);
+
   return (
-    <div className="flex gap-8 justify-center m-8">
+    <div className="flex flex-col gap-8 justify-center items-center m-8">
       <img
-        className="h-[32rem] w-[32rem] rounded-xl"
-        src={placeholderImg}
+        className="h-[16rem] w-[32rem] rounded-xl"
+        src={capsulesImg[randomNumber()]}
         alt=""
       />
-      <div className="flex flex-col gap-4 tracking-wide">
+      <div className="flex flex-col gap-4 mx-4 tracking-wide">
         <p>
           <span className="font-bold">Capsule Id: </span>
           {capsule_id}
