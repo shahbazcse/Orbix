@@ -45,7 +45,7 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
             className="flex flex-col opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] justify-end bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
-              <p class="text-3xl font-bold tracking-wider leading-tight text-white">
+              <p className="text-3xl font-bold tracking-wider leading-tight text-white">
                 {capsule_serial} - {capsule_id.toUpperCase()}
               </p>
             </div>

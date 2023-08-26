@@ -136,7 +136,7 @@ function RocketData({ data }) {
           </div>
           <div className="flex flex-col gap-6">
             {flickr_images?.map((img) => (
-              <a key={img} href={img} target="_blank">
+              <a key={img} href={img} target="_blank" rel="noreferrer">
                 <img
                   src={img}
                   alt="Sample"

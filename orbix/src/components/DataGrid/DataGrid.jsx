@@ -18,7 +18,7 @@ export default function DataGrid() {
   const [dataGrid, setDataGrid] = useState({ capsules: [], rockets: [] });
 
   useEffect(() => {
-    setDataGrid({ ...dataGrid, capsules: capsulesData, rockets: rocketsData });
+    setDataGrid({ capsules: capsulesData, rockets: rocketsData });
   }, [capsulesData, rocketsData]);
 
   return (

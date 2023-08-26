@@ -4,12 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-white;
+  }
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
@@ -17,9 +36,9 @@ code {
     monospace;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
+ /* Scrollbar */
+ ::-webkit-scrollbar {
+  width: 4px;
   height: 6px;
 }
 
@@ -30,7 +49,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #e1e2e459;
+  background-color: #5152536b;
   opacity: 70;
   border-radius: 100px;
   transition: background-color 0.3s;

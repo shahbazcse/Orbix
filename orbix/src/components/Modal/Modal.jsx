@@ -16,7 +16,7 @@ export default function Modal({ modalData, setOpenModal }) {
         setData(rocketData);
       }
     })();
-  }, []);
+  }, [modalData]);
 
   const closeModal = (e) => {
     e.target.id === "blur-area" && setOpenModal(false);
