@@ -2,7 +2,7 @@ import "./index.css";
 import NavBar from "./components/NavBar";
 import Banner from "./components/Banner";
 import Form from "./components/Form";
-import DataGrid from "./components/DataGrid";
+import DataGrid from "./components/DataGrid/DataGrid";
 import Footer from "./components/Footer";
 
 function App() {

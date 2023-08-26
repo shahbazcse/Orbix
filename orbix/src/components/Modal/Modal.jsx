@@ -1,14 +1,36 @@
-export default function Modal({ setOpenModal }) {
+import { useEffect, useState } from "react";
+import { getOneCapsule, getOneRocket } from "../../services/DataService";
+import CapsuleData from "./CapsuleData";
+import RocketData from "./RocketData";
+
+export default function Modal({ modalData, setOpenModal }) {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      if (modalData.type === "capsule") {
+        const capsuleData = await getOneCapsule(modalData.capsule_serial);
+        setData(capsuleData);
+      } else {
+        const rocketData = await getOneRocket(modalData.rocket_id);
+        setData(rocketData);
+      }
+    })();
+  }, []);
+
   const closeModal = (e) => {
     e.target.id === "blur-area" && setOpenModal(false);
   };
+
+  console.log(data);
+
   return (
     <div
       id="blur-area"
       onClick={(e) => closeModal(e)}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center font-barlow font-thin"
     >
-      <div className="bg-white rounded-lg sm:mx-[16rem] lg:h-[24rem] lg:mx-[36rem]">
+      <div className="bg-white rounded-lg mx-[8rem] h-[40rem] lg:mx-[36rem] sm:overflow-auto">
         <div className="flex justify-end cursor-pointer border-b border-gray-400 text-white text-right px-4 py-2 rounded-t-lg">
           <div
             onClick={() => setOpenModal(false)}
@@ -26,19 +48,11 @@ export default function Modal({ setOpenModal }) {
             </svg>
           </div>
         </div>
-        <div className="px-4 pb-4 pt-2">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-          aspernatur deserunt, nobis minus id maxime soluta, incidunt, error
-          ducimus eos iure delectus alias voluptates explicabo asperiores fuga
-          voluptatibus vitae unde animi omnis laboriosam ipsum natus laborum
-          cumque! Dolorum impedit aliquam optio nobis, obcaecati sit cumque non
-          quas quisquam aspernatur explicabo deleniti tempore autem reiciendis
-          possimus delectus, quam, adipisci corrupti qui. Natus dolores cumque
-          facilis neque vel ab, labore blanditiis voluptatem ipsa rem nihil
-          optio est ut quis rerum, error eos quas exercitationem expedita culpa!
-          Possimus, aliquam dolorem nostrum, perspiciatis quod nisi corrupti
-          voluptas tempore placeat modi provident nihil sit commodi.
-        </div>
+        {modalData.type === "capsule" ? (
+          <CapsuleData data={data} />
+        ) : (
+          <RocketData data={data} />
+        )}
       </div>
     </div>
   );

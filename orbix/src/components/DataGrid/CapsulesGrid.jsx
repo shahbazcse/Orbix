@@ -1,22 +1,9 @@
-import { useEffect, useState } from "react";
-import Modal from "./Modal";
+import { useState } from "react";
 
-export default function DataGrid() {
-  const [openModal, setOpenModal] = useState(false);
-
-  const dataCount = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
-
-  const [dataGrid, setDataGrid] = useState([]);
+export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
   const [gridPerPage, setGridPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    setDataGrid(dataCount);
-  }, []);
-
-  const totalPages = Math.ceil(dataGrid.length / gridPerPage);
+  const totalPages = Math.ceil(capsules.length / gridPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
 
   const lastIndex = currentPage * gridPerPage;
@@ -34,16 +21,27 @@ export default function DataGrid() {
     }
   };
 
+  const handleOpenModal = (capsule_serial) => {
+    setOpenModal(true);
+    setModalData({
+      type: "capsule",
+      capsule_serial: capsule_serial,
+      rocket_id: "",
+    });
+  };
+
+  console.log(capsules);
+
   return (
-    <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl font-semibold">
-      <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-4">
-        {dataGrid.slice(firstIndex, lastIndex).map((n) => (
+    <>
+      <div className="flex flex-wrap gap-8 px-12  justify-center items-center mx-12 mb-4">
+        {capsules.slice(firstIndex, lastIndex).map(({ capsule_serial }) => (
           <div
-            key={n}
-            onClick={() => setOpenModal(true)}
-            className="flex justify-center items-center border border-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            key={capsule_serial}
+            onClick={() => handleOpenModal(capsule_serial)}
+            className="flex justify-center items-center shadow-md border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
-            {n}
+            {capsule_serial}
           </div>
         ))}
       </div>
@@ -104,7 +102,6 @@ export default function DataGrid() {
           </svg>
         </a>
       </nav>
-      {openModal && <Modal setOpenModal={setOpenModal} />}
-    </div>
+    </>
   );
 }
