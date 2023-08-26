@@ -21,7 +21,7 @@ export default function DataGrid() {
   }, [capsulesData, rocketsData]);
 
   return (
-    <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl font-semibold">
+    <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl pt-4 font-semibold">
       <CapsulesGrid
         capsules={dataGrid.capsules}
         setModalData={setModalData}

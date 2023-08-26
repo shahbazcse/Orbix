@@ -38,10 +38,24 @@ function CapsuleData({ data }) {
           <span className="font-bold">Landings: </span>
           {landings}
         </p>
-        <p>
-          <span className="font-bold">Missions: </span>
-          {}
-        </p>
+        <div className="flex gap-2">
+          <p className="font-bold">Missions: </p>
+          <div className="flex flex-col gap-2">
+            {missions?.map(({ name, flight }, index) => (
+              <div
+                key={index}
+                className="flex flex-col border px-4 rounded-md text-[14px] hover:bg-gray-100"
+              >
+                <p>
+                  <span className="font-bold">Mission Name:</span> {name}
+                </p>
+                <p>
+                  <span className="font-bold">Flight:</span> {flight}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
         <p>
           <span className="font-bold">Original Launch: </span>
           {original_launch}

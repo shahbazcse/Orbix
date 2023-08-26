@@ -30,8 +30,6 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
     });
   };
 
-  console.log(capsules);
-
   return (
     <>
       <div className="flex flex-wrap gap-8 px-12  justify-center items-center mx-12 mb-4">

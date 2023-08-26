@@ -22,8 +22,6 @@ export function AppProvider({ children }) {
     })();
   }, []);
 
-  console.log(filter);
-
   const filteredCapsules = capsulesData.filter(
     (c) =>
       (filter.status === "Select Status" || c.status === filter.status) &&
