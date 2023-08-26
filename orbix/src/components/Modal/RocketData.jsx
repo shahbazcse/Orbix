@@ -135,8 +135,8 @@ function RocketData({ data }) {
             <p className="text-sm">Click to enlarge</p>
           </div>
           <div className="flex flex-col gap-6">
-            {flickr_images?.map((img, index) => (
-              <a key={img} href={index} target="_blank">
+            {flickr_images?.map((img) => (
+              <a key={img} href={img} target="_blank">
                 <img
                   src={img}
                   alt="Sample"

@@ -36,15 +36,19 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
 
   return (
     <>
-      <div className="flex flex-wrap gap-8 px-12  justify-center items-center mx-12 mb-4">
-        {capsules.slice(firstIndex, lastIndex).map(({ capsule_serial }) => (
+      <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-4">
+        {capsules.slice(firstIndex, lastIndex).map(({ capsule_serial, capsule_id }) => (
           <div
             key={capsule_serial}
             onClick={() => handleOpenModal(capsule_serial)}
             style={{ backgroundImage: `url('${capsulesImg[randomNumber()]}')` }}
-            className="flex justify-center items-center bg-cover shadow-md hover:shadow-lg hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex flex-col opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] justify-end bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
-            Hello
+            <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
+              <p class="text-3xl font-bold tracking-wider leading-tight text-white">
+                {capsule_serial} - {capsule_id.toUpperCase()}
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -42,14 +42,18 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
         Explore Rockets
       </div>
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-6">
-        {rockets.slice(firstIndex, lastIndex).map(({ rocket_id }, index) => (
+        {rockets.slice(firstIndex, lastIndex).map(({ rocket_name, rocket_id }, index) => (
           <div
             key={rocket_id}
             onClick={() => handleOpenModal(rocket_id)}
             style={{ backgroundImage: `url('${randomImg[index]}')` }}
-            className="flex justify-center items-center bg-cover shadow-md hover:shadow-lg hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex flex-col justify-end opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
-            {rocket_id}
+            <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
+              <p class="text-3xl font-bold tracking-wider leading-tight text-white">
+                {rocket_name}
+              </p>
+            </div>
           </div>
         ))}
       </div>
