@@ -22,8 +22,6 @@ export default function Modal({ modalData, setOpenModal }) {
     e.target.id === "blur-area" && setOpenModal(false);
   };
 
-  console.log(data);
-
   return (
     <div
       id="blur-area"

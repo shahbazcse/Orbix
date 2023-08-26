@@ -37,7 +37,7 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
           <div
             key={capsule_serial}
             onClick={() => handleOpenModal(capsule_serial)}
-            className="flex justify-center items-center shadow-md border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex justify-center items-center shadow-md hover:shadow-xl hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             {capsule_serial}
           </div>

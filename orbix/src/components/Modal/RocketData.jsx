@@ -129,14 +129,14 @@ function RocketData({ data }) {
             <p className="font-bold">Rocket Images: </p>
             <p className="text-sm">Click to enlarge</p>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-6">
             {flickr_images?.map((img, index) => (
               <a href={img} target="_blank">
                 <img
                   key={index}
                   src={img}
                   alt="Sample"
-                  className="flex flex-col h-40 w-[13rem] hover:border-2 border-white hover:shadow-full rounded-md text-[14px] hover:bg-gray-100 cursor-pointer"
+                  className="flex flex-col h-40 w-[13rem] hover:shadow-xl hover:shadow-gray-400 border-white hover:shadow-full rounded-md text-[14px] hover:bg-gray-100 cursor-pointer"
                 />
               </a>
             ))}

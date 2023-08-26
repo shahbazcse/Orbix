@@ -21,8 +21,6 @@ export default function DataGrid() {
     setDataGrid({ ...dataGrid, capsules: capsulesData, rockets: rocketsData });
   }, [capsulesData, rocketsData]);
 
-  console.log(rocketsData);
-
   return (
     <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl pt-4 font-semibold">
       <CapsulesGrid

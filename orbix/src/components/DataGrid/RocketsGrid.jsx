@@ -40,7 +40,7 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
           <div
             key={rocket_id}
             onClick={() => handleOpenModal(rocket_id)}
-            className="flex justify-center items-center shadow-md border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex justify-center items-center shadow-md hover:shadow-xl hover:shadow-gray-400 border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             {rocket_id}
           </div>
