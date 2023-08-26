@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function RocketsGrid({ rockets, setOpenModal }) {
+export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
   const [gridPerPage, setGridPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(rockets.length / gridPerPage);
@@ -20,19 +20,29 @@ export default function RocketsGrid({ rockets, setOpenModal }) {
       setCurrentPage(currentPage + 1);
     }
   };
+
+  const handleOpenModal = (rocket_id) => {
+    setOpenModal(true);
+    setModalData({
+      type: "rocket",
+      capsule_serial: "",
+      rocket_id: rocket_id,
+    });
+  };
+
   return (
     <>
       <div className="font-bold my-12 text-4xl text-left font-mont">
         Explore Rockets
       </div>
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-6">
-        {rockets.slice(firstIndex, lastIndex).map(({ id }) => (
+        {rockets.slice(firstIndex, lastIndex).map(({ rocket_id }) => (
           <div
-            key={id}
-            onClick={() => setOpenModal(true)}
+            key={rocket_id}
+            onClick={() => handleOpenModal(rocket_id)}
             className="flex justify-center items-center shadow-md border border-gray-200 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
-            {id}
+            {rocket_id}
           </div>
         ))}
       </div>

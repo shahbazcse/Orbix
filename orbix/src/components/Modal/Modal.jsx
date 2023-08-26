@@ -30,7 +30,7 @@ export default function Modal({ modalData, setOpenModal }) {
       onClick={(e) => closeModal(e)}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center font-barlow font-thin"
     >
-      <div className="bg-white rounded-lg mx-[8rem] h-[40rem] lg:mx-[36rem] sm:overflow-auto">
+      <div className="bg-white rounded-lg mx-[6rem] h-[40rem] lg:mx-[36rem] sm:overflow-auto">
         <div className="flex justify-end sticky top-0 z-10 drop-shadow-md opacity-[0.85] bg-white cursor-pointer border-b border-gray-400 text-white text-right px-4 py-2 rounded-t-lg">
           <div
             onClick={() => setOpenModal(false)}

@@ -12,13 +12,16 @@ export default function DataGrid() {
     rocket_id: "",
   });
 
-  const { filteredCapsules: capsulesData, rocketsData } = useContext(AppContext);
+  const { filteredCapsules: capsulesData, rocketsData } =
+    useContext(AppContext);
 
   const [dataGrid, setDataGrid] = useState({ capsules: [], rockets: [] });
 
   useEffect(() => {
     setDataGrid({ ...dataGrid, capsules: capsulesData, rockets: rocketsData });
   }, [capsulesData, rocketsData]);
+
+  console.log(rocketsData);
 
   return (
     <div className="bg-[#ffffff] flex flex-col justify-center items-center lg:px-[8rem] font-barlow text-2xl pt-4 font-semibold">
