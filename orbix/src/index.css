@@ -62,7 +62,9 @@ code {
 
 .banner-img {
   background-image: url("./assets/media/banner.jpg");
+  background-repeat: no-repeat;
   background-size: contain;
+  opacity: 80%;
 }
 
 .form {

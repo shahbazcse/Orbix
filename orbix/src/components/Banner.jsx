@@ -10,7 +10,7 @@ export default function Banner() {
           Join Us on This Cosmic Journey!
         </p>
       </div>
-      <div className="banner-img h-full w-full"></div>
+      <div className="banner-img h-full w-full 3xl:hidden"></div>
     </div>
   );
 }
