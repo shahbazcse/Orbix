@@ -1,6 +1,7 @@
-# Orbix
+# Orbix | Defying Gravity, Exploring Infinity
 
-Orbix | Defying Gravity, Exploring Infinity
+Live Link: https://orbix.vercel.app/
+Demo Video: https://www.loom.com/share/91dfdad43e54447ba71b8dc2fa3895ee?sid=39e74be1-768f-4d68-b12a-9af3bc91ae3b
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/shahbazcse/ShahbazAhmad-FrontendDeveloper.svg)](https://github.com/shahbazcse/ShahbazAhmad-FrontendDeveloper/stargazers)
@@ -15,7 +16,7 @@ Orbix | Defying Gravity, Exploring Infinity
     - [Prerequisites](#prerequisites)
   - [Contributing](#contributing)
   - [License](#license)
-  - [Acknowledgements](#contact)
+  - [Contact](#contact)
 
 ## About Orbix
 
