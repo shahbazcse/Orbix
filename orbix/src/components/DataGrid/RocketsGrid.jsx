@@ -38,7 +38,7 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
 
   return (
     <>
-      <div className="font-bold my-12 text-4xl text-left font-mont">
+      <div className="font-bold my-12 text-4xl text-left text-white font-mont backdrop-blur-md">
         Explore Rockets
       </div>
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-6">
@@ -47,7 +47,7 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
             key={rocket_id}
             onClick={() => handleOpenModal(rocket_id)}
             style={{ backgroundImage: `url('${randomImg[index]}')` }}
-            className="flex flex-col justify-end opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex flex-col justify-end opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-600 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
               <p className="text-3xl font-bold tracking-wider leading-tight text-white">

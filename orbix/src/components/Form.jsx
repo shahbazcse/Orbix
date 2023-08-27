@@ -29,8 +29,8 @@ export default function Form() {
   };
 
   return (
-    <div className="bg-[#ffffff] flex flex-col gap-6 justify-center items-center p-4 py-8 text-lg">
-      <div className="font-bold mt-4 mb-6 text-4xl text-left font-mont">
+    <div className="form bg-black flex flex-col gap-6 justify-center items-center p-4 py-8 text-lg text-white">
+      <div className="font-bold mt-4 mb-6 text-4xl text-left font-mont backdrop-blur-md">
         Explore Capsules
       </div>
       <div className="flex gap-6 justify-center items-center">
@@ -42,12 +42,12 @@ export default function Form() {
               value={query}
               onChange={(e) => setSetQuery(e.target.value)}
               placeholder="Search Id or Serial no.."
-              className="border shadow-md border-slate-200 px-4 py-1 rounded-md"
+              className="border shadow-md shadow-gray-500 border-slate-200 px-4 py-1 rounded-md"
             />
             <div className="flex gap-3 justify-center items-center">
               <div
                 onClick={() => setFilter({ ...filter, query: query })}
-                className="bg-slate-800 hover:bg-black rounded-md text-white px-4 py-1 cursor-pointer"
+                className="bg-gray-300 hover:bg-gray-400 font-bold text-black rounded-md px-4 py-1 cursor-pointer"
               >
                 Search
               </div>
@@ -61,12 +61,12 @@ export default function Form() {
           </div>
           <div className="flex gap-12">
             <div className="flex gap-3">
-              <span className="font-bold">Status: </span>
+              <span className="font-bold backdrop-blur-md">Status: </span>
               <select
                 name="status"
                 value={filter.status}
                 onChange={(e) => updateFilter(e)}
-                className="bg-[#EDF0F4] px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
+                className="bg-[#EDF0F4] text-black px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
               >
                 <option value="Select Status">Select Status</option>
                 <option value="active">Active</option>
@@ -76,12 +76,12 @@ export default function Form() {
               </select>
             </div>
             <div className="flex gap-3">
-              <span className="font-bold">Original Launch: </span>
+              <span className="font-bold backdrop-blur-md">Original Launch: </span>
               <select
                 name="launch"
                 value={filter.launch}
                 onChange={(e) => updateFilter(e)}
-                className="bg-[#EDF0F4] px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
+                className="bg-[#EDF0F4] text-black px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
               >
                 <option value="Select Launch Year">Select Launch Year</option>
                 <option value="2010">2010</option>
@@ -97,12 +97,12 @@ export default function Form() {
               </select>
             </div>
             <div className="flex gap-3">
-              <span className="font-bold">Type: </span>
+              <span className="font-bold backdrop-blur-md">Type: </span>
               <select
                 name="type"
                 value={filter.type}
                 onChange={(e) => updateFilter(e)}
-                className="bg-[#EDF0F4] px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
+                className="bg-[#EDF0F4] text-black px-3 py-1 rounded-xl cursor-pointer hover:bg-gray-300"
               >
                 <option value="Select Type">Select Type</option>
                 <option value="Dragon 1.0">Dragon 1.0</option>

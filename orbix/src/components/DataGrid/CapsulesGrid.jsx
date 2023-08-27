@@ -42,7 +42,7 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
             key={capsule_serial}
             onClick={() => handleOpenModal(capsule_serial)}
             style={{ backgroundImage: `url('${capsulesImg[randomNumber()]}')` }}
-            className="flex flex-col opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] justify-end bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-400 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            className="flex flex-col opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] justify-end bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-600 rounded-md h-[16rem] w-[16rem] cursor-pointer"
           >
             <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
               <p className="text-3xl font-bold tracking-wider leading-tight text-white">
@@ -53,7 +53,7 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
         ))}
       </div>
       <nav
-        className="cursor-pointer isolate inline-flex -space-x-px rounded-md shadow-sm my-6"
+        className="bg-white cursor-pointer isolate inline-flex -space-x-px rounded-md shadow-sm my-6"
         aria-label="Pagination"
       >
         <div

@@ -1,16 +1,16 @@
 export default function Banner() {
   return (
-    <div className="bg-[#ffffff] flex border-b-[1px] border-[#EEF1F5] xl:px-[26rem] xl:gap-24">
-      <div className="flex flex-col gap-6 my-24 ml-12 w-[50%]">
-        <h1 className="font-bold text-5xl font-mont">
-          Powerful Tagline For Your Product
+    <div className="bg-black text-white flex items-center xl:h-[32rem] xl:gap-24">
+      <div className="flex flex-col gap-6 my-32 ml-12 xl:w-[40%] xl:mx-[12rem]">
+        <h1 className="font-bold text-5xl font-mont backdrop-blur-sm leading-snug">
+          Defying Gravity, Exploring Infinity
         </h1>
-        <p className="text-slate-500 font-barlow text-3xl">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi,
-          aliquid!{" "}
+        <p className="text-gray-300 font-barlow text-3xl backdrop-blur-sm leading-snug">
+          Fueling the Future with Rockets that Propel Humanity Beyond the Stars.
+          Join Us on This Cosmic Journey!
         </p>
       </div>
-      <div className="border-[#EDF0F4] border-t-[6px] border-x-[6px] rounded-t-xl p-12 mx-12 mt-12 w-[50%]"></div>
+      <div className="banner-img h-full w-full"></div>
     </div>
   );
 }
