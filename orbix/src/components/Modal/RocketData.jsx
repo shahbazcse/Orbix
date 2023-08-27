@@ -1,8 +1,5 @@
 import React from "react";
-import img1 from "../../assets/rockets/01.jpg";
-import img2 from "../../assets/rockets/02.jpg";
-import img3 from "../../assets/rockets/03.jpg";
-import img4 from "../../assets/rockets/04.jpg";
+import { rocketsImg } from "../../assets/rockets";
 
 function RocketData({ data }) {
   const {
@@ -27,13 +24,12 @@ function RocketData({ data }) {
     wikipedia,
   } = data;
 
-  const randomNumber = () => Math.floor(Math.random() * (3 - 0) + 0);
-  const randomImg = [img1, img2, img3, img4];
+  const sourceImg = rocketsImg.find(({ rname }) => rname === rocket_name);
   return (
     <div className="flex flex-col gap-8 justify-center m-8">
       <img
         className="h-[22rem] w-[46rem] rounded-xl"
-        src={randomImg[randomNumber()]}
+        src={sourceImg?.url}
         alt=""
       />
       <div className="flex flex-col gap-4 mx-4 hover:shadow-gray-400 tracking-wide">

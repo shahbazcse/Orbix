@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import img1 from "../../assets/rockets/01.jpg";
-import img2 from "../../assets/rockets/02.jpg";
-import img3 from "../../assets/rockets/03.jpg";
-import img4 from "../../assets/rockets/04.jpg";
+import { rocketsImg } from "../../assets/rockets";
 
 export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
   const gridPerPage = 10;
@@ -34,28 +31,32 @@ export default function RocketsGrid({ rockets, setModalData, setOpenModal }) {
     });
   };
 
-  const randomImg = [img1, img2, img3, img4];
-
   return (
     <>
       <div className="font-bold my-12 text-4xl text-left text-white font-mont backdrop-blur-md">
         Explore Rockets
       </div>
       <div className="flex flex-wrap gap-8 px-12 justify-center items-center mx-12 mb-6">
-        {rockets.slice(firstIndex, lastIndex).map(({ rocket_name, rocket_id }, index) => (
-          <div
-            key={rocket_id}
-            onClick={() => handleOpenModal(rocket_id)}
-            style={{ backgroundImage: `url('${randomImg[index]}')` }}
-            className="flex flex-col justify-end opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-600 rounded-md h-[16rem] w-[16rem] cursor-pointer"
-          >
-            <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
-              <p className="text-3xl font-bold tracking-wider leading-tight text-white">
-                {rocket_name}
-              </p>
+        {rockets
+          .slice(firstIndex, lastIndex)
+          .map(({ rocket_name, rocket_id }) => (
+            <div
+              key={rocket_id}
+              onClick={() => handleOpenModal(rocket_id)}
+              style={{
+                backgroundImage: `url('${
+                  rocketsImg.find(({ rname }) => rname === rocket_name).url
+                }')`,
+              }}
+              className="flex flex-col justify-end opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-600 rounded-md h-[16rem] w-[16rem] cursor-pointer"
+            >
+              <div className="h-10 backdrop-blur-md px-3 rounded-b-md">
+                <p className="text-3xl font-bold tracking-wider leading-tight text-white">
+                  {rocket_name}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       {totalPages > 1 ? (
         <nav
