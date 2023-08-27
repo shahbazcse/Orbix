@@ -42,7 +42,7 @@ export default function Form() {
               value={query}
               onChange={(e) => setSetQuery(e.target.value)}
               placeholder="Search Id or Serial no.."
-              className="border shadow-md shadow-gray-500 border-slate-200 px-4 py-1 rounded-md"
+              className="border shadow-md shadow-gray-500 text-black border-slate-200 px-4 py-1 rounded-md"
             />
             <div className="flex gap-3 justify-center items-center">
               <div
@@ -76,7 +76,9 @@ export default function Form() {
               </select>
             </div>
             <div className="flex gap-3">
-              <span className="font-bold backdrop-blur-md">Original Launch: </span>
+              <span className="font-bold backdrop-blur-md">
+                Original Launch:{" "}
+              </span>
               <select
                 name="launch"
                 value={filter.launch}

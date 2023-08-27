@@ -61,16 +61,16 @@ code {
 }
 
 .banner-img {
-  background-image: url("./assets/r1.jpg");
+  background-image: url("./assets/media/banner.jpg");
   background-size: contain;
 }
 
 .form {
-  background-image: url("./assets/media/grid3.jpg");
+  background-image: url("./assets/media/grid.jpg");
   background-size: cover;
 }
 
 .datagrid {
-  background-image: url("./assets/media/grid3.jpg");
+  background-image: url("./assets/media/grid.jpg");
   background-size: contain;
 }
