@@ -30,10 +30,6 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
       rocket_id: "",
     });
   };
-
-  const randomNumber = () =>
-    Math.floor(Math.random() * (capsulesImg.length - 1 - 0) + 0);
-
   return (
     <>
       {capsules.length ? (
@@ -46,7 +42,9 @@ export default function CapsulesGrid({ capsules, setModalData, setOpenModal }) {
                   key={capsule_serial}
                   onClick={() => handleOpenModal(capsule_serial)}
                   style={{
-                    backgroundImage: `url('${capsulesImg[randomNumber()]}')`,
+                    backgroundImage: `url('${
+                      capsulesImg.find(({ rid }) => rid === capsule_serial).url
+                    }')`,
                   }}
                   className="flex flex-col opacity-[0.85] transition delay-100 duration-300 hover:opacity-[1] justify-end bg-cover bg-center shadow-md hover:shadow-lg hover:shadow-gray-600 rounded-md h-[16rem] w-[16rem] cursor-pointer"
                 >

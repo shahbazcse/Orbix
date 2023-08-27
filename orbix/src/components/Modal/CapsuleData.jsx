@@ -13,16 +13,12 @@ function CapsuleData({ data }) {
     status,
     type,
   } = data;
-  const randomNumber = () =>
-    Math.floor(Math.random() * (capsulesImg.length - 1 - 0) + 0);
+
+  const imgSource = capsulesImg.find(({ rid }) => rid === capsule_serial);
 
   return (
     <div className="flex flex-col gap-8 justify-center items-center m-8">
-      <img
-        className="h-[16rem] w-[32rem] rounded-xl"
-        src={capsulesImg[randomNumber()]}
-        alt=""
-      />
+      <img className="h-[16rem] w-[32rem] rounded-xl" src={imgSource?.url} alt="" />
       <div className="flex flex-col gap-4 mx-4 tracking-wide">
         <p>
           <span className="font-bold">Capsule Id: </span>
