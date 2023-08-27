@@ -17,7 +17,7 @@ function CapsuleData({ data }) {
   const imgSource = capsulesImg.find(({ rid }) => rid === capsule_serial);
 
   return (
-    <div className="flex flex-col gap-8 justify-center items-center m-8">
+    <div className="flex flex-col gap-8 justify-center m-8">
       <img className="h-[16rem] w-[32rem] rounded-xl" src={imgSource?.url} alt="" />
       <div className="flex flex-col gap-4 mx-4 tracking-wide">
         <p>
@@ -55,8 +55,8 @@ function CapsuleData({ data }) {
           </div>
         </div>
         <p>
-          <span className="font-bold">Original Launch: </span>
-          {original_launch}
+          <span className="font-bold">Original Launch Year: </span>
+          {parseInt(original_launch)}
         </p>
         <p>
           <span className="font-bold">Reuse Count: </span>
