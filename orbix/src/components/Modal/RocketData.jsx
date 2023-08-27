@@ -108,7 +108,7 @@ function RocketData({ data }) {
             href={wikipedia}
             target="_black"
           >
-            {wikipedia}
+            Go to wikipedia
           </a>
         </p>
         <div className="flex gap-2">
