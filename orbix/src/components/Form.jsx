@@ -7,13 +7,16 @@ export default function Form() {
   const { filter, setFilter } = useContext(AppContext);
   const updateFilter = (e) => {
     if (e.target.name === "status") {
-      setFilter({ ...filter, status: e.target.value });
+      setFilter({ ...filter, status: e.target.value, query: "" });
+      setSetQuery("");
     }
     if (e.target.name === "launch") {
-      setFilter({ ...filter, launch: e.target.value });
+      setFilter({ ...filter, launch: e.target.value, query: "" });
+      setSetQuery("");
     }
     if (e.target.name === "type") {
-      setFilter({ ...filter, type: e.target.value });
+      setFilter({ ...filter, type: e.target.value, query: "" });
+      setSetQuery("");
     }
   };
 
@@ -41,7 +44,7 @@ export default function Form() {
               name="search"
               value={query}
               onChange={(e) => setSetQuery(e.target.value)}
-              placeholder="Search Id or Serial no.."
+              placeholder="Search Id or Serial No"
               className="border shadow-md shadow-gray-500 text-black border-slate-200 px-4 py-1 rounded-md"
             />
             <div className="flex gap-3 justify-center items-center">
