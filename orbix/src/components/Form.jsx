@@ -35,7 +35,7 @@ export default function Form() {
       </div>
       <div className="flex gap-6 justify-center items-center">
         <div className="flex flex-col justify-center items-center gap-6 font-barlow text-2xl">
-          <div className="flex gap-3">
+          <div className="flex flex-col md:flex-row gap-3">
             <input
               type="text"
               name="search"
@@ -59,7 +59,7 @@ export default function Form() {
               </div>
             </div>
           </div>
-          <div className="flex gap-12">
+          <div className="flex flex-col md:flex-row gap-12">
             <div className="flex gap-3">
               <span className="font-bold backdrop-blur-md">Status: </span>
               <select
