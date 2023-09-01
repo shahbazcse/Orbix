@@ -7,7 +7,7 @@ export default function Banner() {
         </h1>
         <p className="text-gray-300 font-barlow text-3xl backdrop-blur-sm leading-snug">
           Fueling the Future with Rockets that Propel Humanity Beyond the Stars.
-          Join Us on This Cosmic Journey!
+          <p>Join Us on This Cosmic Journey!</p>
         </p>
       </div>
       <div className="banner-img h-full w-full 3xl:hidden"></div>
